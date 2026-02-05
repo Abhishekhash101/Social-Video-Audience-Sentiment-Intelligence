@@ -6,4 +6,6 @@ nltk
 scikit-learn
 lightgbm
 mlflow
+flask
+flask-cors
 # -e .
