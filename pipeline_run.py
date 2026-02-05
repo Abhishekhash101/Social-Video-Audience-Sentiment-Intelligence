@@ -1,6 +1,11 @@
 from src.components.data_ingestion import DataIngestion
 from src.components.data_transformation import DataTransformation
 from src.components.model_trainer import ModelTrainer
+from dotenv import load_dotenv
+
+load_dotenv()
+
+api_key_provide = os.getenv('YOUTUBE_API')
 
 
 
@@ -8,10 +13,9 @@ if __name__ == "__main__":
     # 1. Ingestion
     print("--- Starting Ingestion ---")
     # Replace with your API KEY and a Sample Video ID
-    API_KEY = "AIzaSyBS57fQDroS9l3BfOOSjaZsntkb7h-6FAI"
     VIDEO_ID = "ReZMjIoMBwY" 
     
-    ingestion = DataIngestion(API_KEY)
+    ingestion = DataIngestion(api_key_provide)
     raw_data_path = ingestion.fetch_comments(VIDEO_ID, max_results=None)
     print(f"Data at: {raw_data_path}")
 
