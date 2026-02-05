@@ -26,7 +26,7 @@ document.getElementById("analyzeBtn").addEventListener("click", async () => {
         // We use Promise.all to send them in parallel for speed
         const promises = comments.slice(0, 10).map(async (commentText) => {
             try {
-                const response = await fetch("http://127.0.0.1:5000/predict", {
+                const response = await fetch("https://social-video-audience-sentiment.onrender.com/predict", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ comment: commentText })
