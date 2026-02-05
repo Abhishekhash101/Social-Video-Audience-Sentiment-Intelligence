@@ -45,7 +45,10 @@ class DataIngestion:
 
             fetched_count = 0
 
-            while request and fetched_count < max_results:
+            while request:
+                if max_results and fetched_count >= max_results:
+                    break
+
                 response = request.execute()
 
                 for item in response['items']:
@@ -60,7 +63,11 @@ class DataIngestion:
 
                 fetched_count += len(response['items'])
 
-                if 'nextPageToken' in response and fetched_count < max_results:
+                if 'nextPageToken' in response:
+                    # If max_results is set and we've reached it, stop.
+                    if max_results and fetched_count >= max_results:
+                        break
+                        
                     request = self.youtube.commentThreads().list(
                         part="snippet",
                         videoId=video_id,

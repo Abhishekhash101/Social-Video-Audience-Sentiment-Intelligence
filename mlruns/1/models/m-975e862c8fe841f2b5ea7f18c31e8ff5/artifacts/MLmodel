@@ -1,0 +1,24 @@
+artifact_path: file:C:/Users/abhis/OneDrive/Desktop/Real World Project/Social Video
+  Audience Sentiment Intelligence/mlruns/1/models/m-975e862c8fe841f2b5ea7f18c31e8ff5/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.12
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.9.0
+model_id: m-975e862c8fe841f2b5ea7f18c31e8ff5
+model_size_bytes: 10404
+model_uuid: m-975e862c8fe841f2b5ea7f18c31e8ff5
+prompts: null
+run_id: dd13bf4810ab485381253ff3ba142bec
+utc_time_created: '2026-02-05 06:14:52.629902'
