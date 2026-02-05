@@ -139,6 +139,7 @@ celerybeat.pid
 .envrc
 .venv
 .dockerignore
+.Dockerignore
 env/
 venv/
 ENV/
